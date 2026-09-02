@@ -1,0 +1,346 @@
+#
+# Menese Protocol, SNS initialisation parameters
+#
+# This file is the complete, auditable specification of the Menese Protocol DAO:
+# what the DAO controls, how the governance token is distributed, and the terms of
+# the decentralization swap. It is submitted to the NNS as a single
+# CreateServiceNervousSystem proposal; if that proposal is adopted, the values below
+# are what the SNS is created with.
+#
+# Verify the canisters this DAO would control before voting:
+#   https://github.com/Menese-Protocol/Menese-External-Reviewers
+# Every one of them rebuilds byte-for-byte to the module hash installed on mainnet.
+#
+name: Menese Protocol
+
+description: >
+    Menese is the Multichain Operating System. A composable cross chain execution
+    engine that anyone can build financial tools on top of, powered by ICP's chain
+    key cryptography, with no bridges, no guardians, and no corporate custody. ICP
+    nodes collectively hold signing keys using threshold cryptography and the
+    complete private key is never reconstructed; not during generation, not during
+    signing, not ever. The canister reads the world through HTTP outcalls, decides
+    with on chain logic, then signs and submits real transactions on the destination
+    chain. This is the difference between a distributed key and a distributed brain.
+
+logo: logo.png
+url: https://meneseprotocol.io
+
+NnsProposal:
+    title: "Proposal to create an SNS DAO for Menese Protocol"
+    url: "https://forum.dfinity.org/t/menese-protocol-sns-decentralization"
+    summary: |
+        Menese Protocol is asking the NNS to create an SNS DAO and hand it control of
+        our four production canisters.
+
+        ## What Menese is
+
+        Menese is the Multichain Operating System.
+
+        It is a composable cross chain execution engine; anyone can build financial
+        tools on top of it, powered by ICP's chain key cryptography, with no bridges,
+        no guardians, and no corporate custody.
+
+        Over $2.5 billion has been lost to bridge hacks in the last three years. The
+        root cause is always the same; bridges hold custody. Whether it is a multisig,
+        a guardian set, or a validator network, someone controls the keys, and that
+        someone can be hacked, bribed, or compromised.
+
+        Menese does not bridge and does not relay. ICP nodes collectively hold signing
+        keys using threshold cryptography. No single node, server, or company ever
+        holds a full key, and the complete private key is never reconstructed; not
+        during generation, not during signing, not ever.
+
+        Most providers stop once the key is distributed. You still need your own
+        servers to watch the market, your own bots to decide, your own infrastructure
+        to coordinate across chains. Menese collapses the whole loop into the canister.
+        It reads the world through HTTP outcalls, decides with on chain logic, then
+        signs and submits real transactions on the destination chain. It perceives,
+        decides, and acts.
+
+        This is the difference between a distributed key and a distributed brain.
+
+        ## Where we are today
+
+        We are live, in production, and being used.
+
+        * Hundreds of active users holding and moving real funds through the wallet
+        * 5 live integrations with businesses building on the Menese SDK
+        * An ICP and SOL liquidity pool running on chain with real deposits
+        * A developer gateway with paid tiers already serving partner traffic
+
+        ## It executes on the chains people actually use
+
+        Menese does not just hold assets on these chains. It builds, signs, and submits
+        real transactions on them, and it composes multi step operations across them
+        from inside the canister.
+
+        Bitcoin, Ethereum, Arbitrum, Optimism, Base, Polygon, Monad, Solana, Sui,
+        Aptos, NEAR, TON, TRON, Cardano, XRP, Litecoin, CloakCoin, and ICP itself.
+        Eighteen chains, one wallet, one identity, and one place where the logic lives.
+
+        On top of that sit venue integrations including THORChain and Hyperliquid, so a
+        user can move value and take a position without leaving the protocol.
+
+        Composability is the part that matters. A single action can read a price on one
+        chain, decide with logic that lives on chain, and settle on another; no bridge
+        in the middle, no relayer to trust, no bot on somebody's server. That is what an
+        operating system for multichain finance means in practice.
+
+        This is not a plan on paper. It is a working protocol with users and revenue.
+
+        ## Stocks and real world assets, on chain
+
+        Menese is not limited to crypto assets. Through tokenized equity venues the
+        protocol gives users access to real markets from the same wallet and the same
+        identity, and lets partners integrate that access through the SDK.
+
+        Around 26 instruments are wired in today, covering equities such as NVDA,
+        TSLA, AAPL, MSFT, AMZN, GOOGL, META, COIN, PLTR, ORCL, INTC and AMD, index
+        products such as SPY and QQQ, and real world assets including SGOV for short
+        term US treasuries, SLV for silver, USO for oil, and USAR for rare earths.
+
+        Orders are signed by the canister and broadcast by the user, so the protocol
+        never takes custody of the position. The same primitives are exposed through
+        the SDK, so a business integrating Menese can offer its own users exposure to
+        stocks and real world assets without building any of it.
+
+        ## Why we are decentralizing
+
+        This DAO is about scale and growth. There are three things we want the
+        community to own and steer with us.
+
+        1. **Exchange listing.** Getting MENES onto a tier one exchange so anyone can
+           buy and sell it, with the treasury funding the listing and the market making.
+        2. **Debit card issuance.** Letting people spend what they hold in Menese in the
+           real world, which is the step that turns a wallet into money people use.
+        3. **Growing the protocol.** More chains, more business integrations, more
+           partners building on the SDK.
+
+        Those are decisions worth more than one company making them. They belong to a DAO.
+
+        ## What the DAO controls
+
+        | Canister | ID | What it does |
+        |---|---|---|
+        | backend | cxa6p-xiaaa-aaaad-aczda-cai | The wallet. User balances, address derivation, and threshold signing for every chain we support. |
+        | frontend | cqby3-2qaaa-aaaad-aczdq-cai | The app. Broadcasts already signed transactions and never touches key material. |
+        | icp_sol_swap | w2vjc-2yaaa-aaaab-ae6zq-cai | The ICP and SOL pool. LP shares, settlement, and the swap state machine. |
+        | sdk_gateway | urs2a-ziaaa-aaaad-aembq-cai | The developer gateway. Subscriptions and per operation metering for partners. |
+
+        ## You can check this yourself
+
+        The full source of all four canisters is published at
+        github.com/Menese-Protocol/Menese-External-Reviewers with a pinned Docker
+        builder. Every one of them rebuilds byte for byte to the module hash that is
+        installed on mainnet right now, and the repository ships a script that checks
+        all four against the live network in one command. You do not have to take our
+        word for what this DAO would be taking control of.
+
+        ## Token distribution
+
+        100,000,000 MENES, fixed supply, no inflation.
+
+        * Team, 18%, unchanged from the published allocation. 10% is issued at genesis
+          as neurons locked for four years; an 18 month dissolve delay that cannot
+          begin until a 30 month vesting period ends. The remaining 8% is redeemed
+          1 for 1 against MENES the team already holds, through the same redemption
+          canister open to every other existing holder.
+        * Mercatura Forum, 10%. Mercatura Forum is Menese Protocol's pre-seed investor.
+          Their allocation is held as a named treasury earmark and released by the
+          DAO's first treasury proposal, an arrangement agreed with them in advance
+          and disclosed here rather than settled quietly after launch.
+        * Decentralization swap, 10%
+        * DAO treasury, 62% of earmarks plus the 18% redemption reserve above
+
+        The treasury carries named earmarks, all disclosed in full in the repository:
+        exchange listing and market making, the Tjati Council reserve for future DAO
+        approved raises, staking emissions, the community allocation, and the reserve
+        that pays existing holders 1 for 1.
+
+        ## Existing holders are protected
+
+        Menese already has a live token, menes_ledger at drgmr-ayaaa-aaaab-aereq-cai,
+        distributed through an early public sale at $0.035 and an on chain staking
+        programme. The DAO mints a new governance token, and a redemption canister
+        exchanges the old token 1 for 1, funded from the treasury reserve.
+
+        Redemption stays open with no deadline. Nobody who backed us early gets timed
+        out of their position. Every redeemed token is burned and a matching amount is
+        held back from treasury, so the two together never go past the published
+        100,000,000 cap.
+
+        ## Governance
+
+        The voting reward rate is 0%. The supply is fixed and the DAO does not print
+        new tokens to pay voters.
+
+# If the swap does not complete, control of the dapp canisters returns to these
+# principals.
+fallback_controller_principals:
+    - vw2b5-vc43c-et5cx-guvr4-yt5y6-ttypw-3mef6-jmxcm-hvwby-5l3oq-yae  # Kareem Younes
+    - 5elw2-6iogf-6v3bc-weq6n-uhiwc-7umyq-mpxo5-z35cy-6qybd-5sktc-cqe  # Mercatura Forum
+
+# The canisters handed to the DAO. Source + reproducible builds:
+# https://github.com/Menese-Protocol/Menese-External-Reviewers
+dapp_canisters:
+    - cxa6p-xiaaa-aaaad-aczda-cai  # backend       the wallet canister
+    - cqby3-2qaaa-aaaad-aczdq-cai  # frontend      asset canister (PWA)
+    - w2vjc-2yaaa-aaaab-ae6zq-cai  # icp_sol_swap  ICP and SOL cross chain pool
+    - urs2a-ziaaa-aaaad-aembq-cai  # sdk_gateway   developer access gateway
+
+Token:
+    name: Menese Protocol
+    symbol: MENES
+    transaction_fee: 10_000 e8s
+    logo: logo.png
+
+Proposals:
+    rejection_fee: 100 tokens
+    initial_voting_period: 4 days
+    maximum_wait_for_quiet_deadline_extension: 1 day
+
+Neurons:
+    # 10 MENES minimum to create a neuron. Kept low deliberately: this value sets the
+    # floor on minimum_participant_icp below, and a high floor prices out small participants.
+    minimum_creation_stake: 1_000_000_000 e8s
+
+Voting:
+    minimum_dissolve_delay: 26 weeks
+
+    MaximumVotingPowerBonuses:
+        DissolveDelay:
+            duration: 4 years
+            bonus: 100%
+        Age:
+            duration: 4 years
+            bonus: 25%
+
+    # Fixed 100,000,000 supply with no inflation: the DAO does not mint new tokens to
+    # pay voting rewards. Same choice onicai made for their fixed-cap launch.
+    RewardRate:
+        initial: 0%
+        final: 0%
+        transition_duration: 0 seconds
+
+Distribution:
+
+    # ── Team ──────────────────────────────────────────────────────────────────
+    # The team already holds 18,000,000 MENES on the existing menes_ledger, staked in
+    # the sale canister. 10,000,000 of that entitlement is issued here as genesis
+    # neurons, each person's pro rata share. The remaining 8,000,000 is redeemed
+    # 1 for 1 against what they already hold.
+    #
+    # Every neuron below is locked for four years: an 18 month dissolve delay that
+    # cannot start until the 30 month vesting period ends. They vote in full from day
+    # one and cannot sell for 48 months.
+    #
+    # Mercatura Forum is Menese Protocol's pre-seed investor. Their 10,000,000 is not
+    # issued here as a genesis neuron. It is held as a named treasury earmark and
+    # transferred to them by the DAO's first treasury proposal, an arrangement agreed
+    # with Mercatura Forum in advance of this proposal.
+    Neurons:
+
+        - principal: sugn6-7mjeq-5kzk5-7dph2-w6sq7-ev56n-qt7yd-a5l66-birkn-kpdx5-gqe  # Timo
+          stake: 1_388_892 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: vw2b5-vc43c-et5cx-guvr4-yt5y6-ttypw-3mef6-jmxcm-hvwby-5l3oq-yae  # Kareem
+          stake: 1_388_888 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: tv73a-nsnvr-u3ruc-sly4k-2fygz-wft3h-gdqve-hdw5q-msmac-gvnnk-yae  # Nour
+          stake: 1_250_000 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: a2gxl-ixyyn-gc6u3-uksho-svlmu-h7wm7-mnjer-e4ynk-fcw35-r4peg-iqe  # Jumana
+          stake: 1_250_000 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: 4b2em-p3hvn-gyjjn-zvbwo-dapoy-5dzl4-jfnfy-sbx3u-lp5cq-5pldy-bae  # Wael
+          stake: 1_250_000 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: qiq6q-vhd3p-u5rkt-h4ste-ttor3-wl64m-vdpyh-2z6q6-elxpz-rhgm3-bae  # Abdelrahman A.
+          stake: 1_111_111 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: atwek-uwz7p-p72f5-32zd7-rtsqt-uhvo6-ghujz-fwm2s-gjheg-vxpku-hae  # Adham
+          stake: 833_333 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: 5b6kn-x63mz-2ezyn-q4paf-6hx7q-3mwyw-eng6g-4lfla-ydt3n-t7ddw-7ae  # Abdelrahman E.
+          stake: 833_333 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: dqd4z-olqc3-knqur-hx73y-xigsp-akta3-thyh3-uww5d-aj4vz-kso2e-mqe  # Saher
+          stake: 555_555 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: eoogn-23szv-p27ny-5btdd-n7mab-klzqz-wlk7f-okepn-hlj7m-collr-sqe  # Andy
+          stake: 138_888 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+    InitialBalances:
+        # Named earmarks inside the treasury, disclosed in README.md:
+        #   10,000,000  Mercatura Forum, the pre-seed investor, released by the DAO's
+        #               first treasury proposal, as agreed with them in advance
+        #    8,000,000  Team redemption, 1 for 1 against existing holdings
+        #   27,500,000  Treasury & liquidity provision
+        #   10,000,000  CEX listing + market making (released by treasury proposal)
+        #    9,000,000  Tjati Council reserve for future DAO-approved raises
+        #    7,000,000  Staking emissions, funding the existing staking programme
+        #    5,000,000  Community allocation
+        #    3,500,000  1:1 redemption reserve for existing menes_ledger holders
+        treasury: 80_000_000 tokens
+        swap: 10_000_000 tokens
+
+    # Checksum: 10,000,000 genesis neurons + 80,000,000 treasury
+    #         + 10,000,000 swap = 100,000,000
+    total: 100_000_000 tokens
+
+Swap:
+    # If fewer than this many people join, or less than the minimum raise is reached,
+    # the swap does not complete and every participant is refunded in full.
+    minimum_participants: 50
+
+    minimum_direct_participation_icp: 100_000 tokens
+    maximum_direct_participation_icp: 500_000 tokens
+
+    minimum_participant_icp: 5 tokens
+    maximum_participant_icp: 60_000 tokens
+
+    # No country is blocked from taking part. Menese does not blacklist people from
+    # its own DAO. Each participant confirms below that they are responsible for
+    # their own position under the laws that apply to them.
+    confirmation_text: >
+        I confirm that I understand MENES is a governance token for the Menese
+        Protocol DAO, that its value can fall as well as rise, and that participating
+        in this swap is not an investment in any company. I confirm that I am
+        responsible for my own participation and that it is permitted under the laws
+        that apply to me.
+
+    # Swap participants receive a basket of neurons dissolving over one year, so
+    # genesis voting power is not immediately liquid on either side of the table.
+    VestingSchedule:
+        events: 5
+        interval: 73 days
+
+    # Time of day the swap opens. The calendar date is set when the NNS proposal
+    # executes, not here.
+    start_time: 12:00 UTC
+    duration: 21 days
+
+    # The Neurons' Fund does not participate. The raise comes from direct
+    # participants only, and their share is not diluted by matched NNS capital.
+    neurons_fund_participation: false
