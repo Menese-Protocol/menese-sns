@@ -10,6 +10,8 @@
 # Verify the canisters this DAO would control before voting:
 #   https://github.com/Menese-Protocol/Menese-External-Reviewers
 # Every one of them rebuilds byte-for-byte to the module hash installed on mainnet.
+# The repository is access controlled. Reviewers can request access from the forum
+# thread and we will grant it. Installed module hashes are readable by anyone.
 #
 name: Menese Protocol
 
@@ -130,33 +132,114 @@ NnsProposal:
 
         ## You can check this yourself
 
-        The full source of all four canisters is published at
-        github.com/Menese-Protocol/Menese-External-Reviewers with a pinned Docker
-        builder. Every one of them rebuilds byte for byte to the module hash that is
-        installed on mainnet right now, and the repository ships a script that checks
-        all four against the live network in one command. You do not have to take our
-        word for what this DAO would be taking control of.
+        The full source of all four canisters, with a pinned Docker builder, is held
+        at github.com/Menese-Protocol/Menese-External-Reviewers. Every one of them
+        rebuilds byte for byte to the module hash that is installed on mainnet right
+        now, and the repository ships a script that checks all four against the live
+        network in one command.
+
+        The repository is access controlled. Reviewers can request access from the
+        forum thread and we will grant it.
+
+        The installed module hashes need no access at all. Anyone can read the hash on
+        each of the four canisters straight off the network and compare it with the
+        build.
 
         ## Token distribution
 
         100,000,000 MENES, fixed supply, no inflation.
 
-        * Team, 18%, unchanged from the published allocation. 10% is issued at genesis
-          as neurons locked for four years; an 18 month dissolve delay that cannot
-          begin until a 30 month vesting period ends. The remaining 8% is redeemed
-          1 for 1 against MENES the team already holds, through the same redemption
-          canister open to every other existing holder.
-        * Mercatura Forum, 10%. Mercatura Forum is Menese Protocol's pre-seed investor.
-          Their allocation is held as a named treasury earmark and released by the
-          DAO's first treasury proposal, an arrangement agreed with them in advance
-          and disclosed here rather than settled quietly after launch.
+        * Team, 18%, unchanged from the published allocation and issued in full at
+          genesis as neurons locked for four years; an 18 month dissolve delay that
+          cannot begin until a 30 month vesting period ends. The team does not take
+          part in the redemption programme below. The MENES the team holds on the
+          existing ledger is retired against these neurons, so the same entitlement
+          is never issued twice.
+        * Mercatura Forum, 10%. Mercatura Forum is Menese Protocol's pre-seed
+          investor, and its allocation is issued at genesis as a neuron on exactly
+          the same four year terms as the team. It is in this proposal, in the open,
+          locked by the same schedule, rather than sitting in the treasury waiting to
+          be released to them by a later vote.
         * Decentralization swap, 10%
-        * DAO treasury, 62% of earmarks plus the 18% redemption reserve above
+        * DAO treasury, 62%
 
         The treasury carries named earmarks, all disclosed in full in the repository:
-        exchange listing and market making, the Tjati Council reserve for future DAO
-        approved raises, staking emissions, the community allocation, and the reserve
-        that pays existing holders 1 for 1.
+        treasury and liquidity provision, exchange listing and market making, the
+        Tjati Council reserve for future DAO approved raises, staking emissions, the
+        community allocation, and the reserve that pays existing holders 1 for 1.
+
+        Every insider allocation in this DAO is a neuron in the table above. None of
+        it is a treasury balance that becomes liquid on a vote the insiders can
+        themselves influence.
+
+        ## Why the swap is 10% and not 20%
+
+        20% of supply is set aside to reach the public, not 10. It is split in half
+        because the two halves buy different things.
+
+        10% is sold here, on chain, through this decentralization swap. The other 10%
+        is the exchange listing earmark named above: it is what pays for a tier one
+        launchpad and a tier one centralised exchange listing, together with the
+        market making that a listing requires to be worth having. That is the second
+        of the three things this DAO is being asked to own, and the SNS has no
+        primitive for it; a swap can only sell the swap bucket. So it sits in the
+        treasury as a disclosed earmark and is released by a treasury proposal that
+        the DAO votes on, once there is a venue and terms to vote on.
+
+        Selling the full 20% here would leave the listing unfunded.
+
+        ## Voting power at genesis
+
+        Token share and voting power are not the same thing.
+
+        Treasury tokens carry no voting power at all, so the 62% held by the DAO does
+        not vote. Voting power at genesis is therefore split between the 28% in
+        genesis neurons and the 10% sold in the swap. Because an SNS neuron's weight
+        rises with its dissolve delay, and carries no weight below the 26 week
+        minimum, the swap's neuron baskets are laddered out to 1,274 days rather than
+        the year that is more usual. That choice takes the public's share of genesis
+        voting power from 10.8% to 25.3%.
+
+        At genesis the contributors and Mercatura Forum together hold roughly 74.7%
+        of voting power, and swap participants roughly 25.3%.
+
+        That 74.7% is not a bloc. It is eleven separate principals, nine individual
+        contributors and two institutions, Mercatura Forum and MR Research. There is
+        no common control between them, no shared custody, and no following
+        relationship configured at genesis. They are listed one by one in the
+        distribution above and any voter can check them.
+
+        Tooling that reads this file, including the SNS Tokenomics Analyzer on the
+        ICP dashboard, sums all of them into a single "developer neurons" figure,
+        because that is the only shape the configuration format has. Here is what
+        that figure is actually made of.
+
+        | Holder | Principal | MENES | Voting power |
+        |---|---|---|---|
+        | Mercatura Forum | `5elw2-6iogf-6v3bc-weq6n-uhiwc-7umyq-mpxo5-z35cy-6qybd-5sktc-cqe` | 10,000,000 | 26.67% |
+        | Timo | `sugn6-7mjeq-5kzk5-7dph2-w6sq7-ev56n-qt7yd-a5l66-birkn-kpdx5-gqe` | 2,500,002 | 6.67% |
+        | Kareem | `vw2b5-vc43c-et5cx-guvr4-yt5y6-ttypw-3mef6-jmxcm-hvwby-5l3oq-yae` | 2,499,998 | 6.67% |
+        | Nour | `tv73a-nsnvr-u3ruc-sly4k-2fygz-wft3h-gdqve-hdw5q-msmac-gvnnk-yae` | 2,250,000 | 6.00% |
+        | Jumana | `a2gxl-ixyyn-gc6u3-uksho-svlmu-h7wm7-mnjer-e4ynk-fcw35-r4peg-iqe` | 2,250,000 | 6.00% |
+        | Wael | `4b2em-p3hvn-gyjjn-zvbwo-dapoy-5dzl4-jfnfy-sbx3u-lp5cq-5pldy-bae` | 2,250,000 | 6.00% |
+        | Abdelrahman A. | `qiq6q-vhd3p-u5rkt-h4ste-ttor3-wl64m-vdpyh-2z6q6-elxpz-rhgm3-bae` | 2,000,000 | 5.33% |
+        | Adham | `atwek-uwz7p-p72f5-32zd7-rtsqt-uhvo6-ghujz-fwm2s-gjheg-vxpku-hae` | 1,500,000 | 4.00% |
+        | Abdelrahman E. | `5b6kn-x63mz-2ezyn-q4paf-6hx7q-3mwyw-eng6g-4lfla-ydt3n-t7ddw-7ae` | 1,500,000 | 4.00% |
+        | Saher | `dqd4z-olqc3-knqur-hx73y-xigsp-akta3-thyh3-uww5d-aj4vz-kso2e-mqe` | 1,000,000 | 2.67% |
+        | Andy | `eoogn-23szv-p27ny-5btdd-n7mab-klzqz-wlk7f-okepn-hlj7m-collr-sqe` | 250,000 | 0.67% |
+        | Swap participants | | 10,000,000 | 25.33% |
+
+        No holder other than Mercatura Forum reaches 6.7%. The largest single holder
+        in the DAO is the pre-seed investor at 26.67%, and the public who buy in this
+        swap outweigh it at 25.33%. Nothing passes here without support from holders
+        who do not answer to one another.
+
+        Each of the people above confirms their own principal, in public and from
+        their own account, in the pinned issue on
+        github.com/Menese-Protocol/menese-sns before this proposal is submitted.
+
+        That ratio moves toward the community as existing MENES holders redeem and
+        stake, and as the treasury funds the community allocation.
 
         ## Existing holders are protected
 
@@ -164,6 +247,11 @@ NnsProposal:
         distributed through an early public sale at $0.035 and an on chain staking
         programme. The DAO mints a new governance token, and a redemption canister
         exchanges the old token 1 for 1, funded from the treasury reserve.
+
+        Redemption covers everyone outside the team: MENES held directly, and MENES
+        staked in the sale canister, principal and accrued interest alike. The team
+        is excluded from it by design, because the team's entire allocation is
+        already issued as the locked neurons listed above.
 
         Redemption stays open with no deadline. Nobody who backed us early gets timed
         out of their position. Every redeemed token is burned and a matching amount is
@@ -225,88 +313,96 @@ Voting:
 
 Distribution:
 
-    # ── Team ──────────────────────────────────────────────────────────────────
-    # The team already holds 18,000,000 MENES on the existing menes_ledger, staked in
-    # the sale canister. 10,000,000 of that entitlement is issued here as genesis
-    # neurons, each person's pro rata share. The remaining 8,000,000 is redeemed
-    # 1 for 1 against what they already hold.
+    # ── Team and pre-seed investor ────────────────────────────────────────────
+    # Every genesis neuron in this section is visible in this proposal and locked on
+    # the same terms: an 18 month dissolve delay that cannot begin until a 30 month
+    # vesting period ends, so nothing can be sold for 48 months. They vote in full
+    # from day one, which is the point; the people asking the NNS for this DAO carry
+    # their voting weight in the open rather than behind a treasury account.
     #
-    # Every neuron below is locked for four years: an 18 month dissolve delay that
-    # cannot start until the 30 month vesting period ends. They vote in full from day
-    # one and cannot sell for 48 months.
+    # Team, 18,000,000, each person's pro rata share of the published allocation.
+    # The team takes no part in the redemption programme described below. The MENES
+    # the team holds on the existing menes_ledger is retired against these neurons
+    # instead of being exchanged, so the same entitlement is never issued twice.
     #
-    # Mercatura Forum is Menese Protocol's pre-seed investor. Their 10,000,000 is not
-    # issued here as a genesis neuron. It is held as a named treasury earmark and
-    # transferred to them by the DAO's first treasury proposal, an arrangement agreed
-    # with Mercatura Forum in advance of this proposal.
+    # Mercatura Forum, 10,000,000. Mercatura Forum is Menese Protocol's pre-seed
+    # investor, and its allocation is issued here as a genesis neuron on exactly the
+    # team's four year terms. An earlier draft of this file parked that allocation in
+    # a named treasury earmark to be released by the DAO's first treasury proposal.
+    # Issuing it here is stricter in both directions: the investor's position is
+    # locked by the same schedule as the team's rather than being liquid on release,
+    # and the DAO is not asked to approve a large treasury transfer in its opening
+    # weeks.
     Neurons:
 
         - principal: sugn6-7mjeq-5kzk5-7dph2-w6sq7-ev56n-qt7yd-a5l66-birkn-kpdx5-gqe  # Timo
-          stake: 1_388_892 tokens
+          stake: 2_500_002 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: vw2b5-vc43c-et5cx-guvr4-yt5y6-ttypw-3mef6-jmxcm-hvwby-5l3oq-yae  # Kareem
-          stake: 1_388_888 tokens
+          stake: 2_499_998 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: tv73a-nsnvr-u3ruc-sly4k-2fygz-wft3h-gdqve-hdw5q-msmac-gvnnk-yae  # Nour
-          stake: 1_250_000 tokens
+          stake: 2_250_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: a2gxl-ixyyn-gc6u3-uksho-svlmu-h7wm7-mnjer-e4ynk-fcw35-r4peg-iqe  # Jumana
-          stake: 1_250_000 tokens
+          stake: 2_250_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: 4b2em-p3hvn-gyjjn-zvbwo-dapoy-5dzl4-jfnfy-sbx3u-lp5cq-5pldy-bae  # Wael
-          stake: 1_250_000 tokens
+          stake: 2_250_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: qiq6q-vhd3p-u5rkt-h4ste-ttor3-wl64m-vdpyh-2z6q6-elxpz-rhgm3-bae  # Abdelrahman A.
-          stake: 1_111_111 tokens
+          stake: 2_000_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: atwek-uwz7p-p72f5-32zd7-rtsqt-uhvo6-ghujz-fwm2s-gjheg-vxpku-hae  # Adham
-          stake: 833_333 tokens
+          stake: 1_500_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: 5b6kn-x63mz-2ezyn-q4paf-6hx7q-3mwyw-eng6g-4lfla-ydt3n-t7ddw-7ae  # Abdelrahman E.
-          stake: 833_333 tokens
+          stake: 1_500_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: dqd4z-olqc3-knqur-hx73y-xigsp-akta3-thyh3-uww5d-aj4vz-kso2e-mqe  # Saher
-          stake: 555_555 tokens
+          stake: 1_000_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
         - principal: eoogn-23szv-p27ny-5btdd-n7mab-klzqz-wlk7f-okepn-hlj7m-collr-sqe  # Andy
-          stake: 138_888 tokens
+          stake: 250_000 tokens
+          dissolve_delay: 18 months
+          vesting_period: 30 months
+
+        - principal: 5elw2-6iogf-6v3bc-weq6n-uhiwc-7umyq-mpxo5-z35cy-6qybd-5sktc-cqe  # Mercatura Forum
+          stake: 10_000_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
 
     InitialBalances:
         # Named earmarks inside the treasury, disclosed in README.md:
-        #   10,000,000  Mercatura Forum, the pre-seed investor, released by the DAO's
-        #               first treasury proposal, as agreed with them in advance
-        #    8,000,000  Team redemption, 1 for 1 against existing holdings
         #   27,500,000  Treasury & liquidity provision
         #   10,000,000  CEX listing + market making (released by treasury proposal)
         #    9,000,000  Tjati Council reserve for future DAO-approved raises
         #    7,000,000  Staking emissions, funding the existing staking programme
         #    5,000,000  Community allocation
         #    3,500,000  1:1 redemption reserve for existing menes_ledger holders
-        treasury: 80_000_000 tokens
+        treasury: 62_000_000 tokens
         swap: 10_000_000 tokens
 
-    # Checksum: 10,000,000 genesis neurons + 80,000,000 treasury
-    #         + 10,000,000 swap = 100,000,000
+    # Checksum: 18,000,000 team + 10,000,000 Mercatura Forum = 28,000,000 genesis
+    #         neurons + 62,000,000 treasury + 10,000,000 swap = 100,000,000
     total: 100_000_000 tokens
 
 Swap:
@@ -330,11 +426,20 @@ Swap:
         responsible for my own participation and that it is permitted under the laws
         that apply to me.
 
-    # Swap participants receive a basket of neurons dissolving over one year, so
-    # genesis voting power is not immediately liquid on either side of the table.
+    # Swap participants receive a basket of eight neurons whose dissolve delays step
+    # up by 182 days, from 0 up to 1,274 days.
+    #
+    # This is longer than a conventional unlock ladder, and it is longer on purpose.
+    # A neuron carries no voting power at all until its dissolve delay reaches the
+    # 26 week minimum set under Voting above, and its weight then rises with that
+    # delay. A short ladder therefore hands the public a token position without the
+    # governance position that is supposed to come with it. Under a five by 73 day
+    # ladder, three of every five neurons in a participant's basket could not vote at
+    # genesis, and the swap's 10% of supply carried 10.8% of the voting power. Under
+    # the schedule below it carries 25.3%.
     VestingSchedule:
-        events: 5
-        interval: 73 days
+        events: 8
+        interval: 182 days
 
     # Time of day the swap opens. The calendar date is set when the NNS proposal
     # executes, not here.
