@@ -279,6 +279,7 @@ NnsProposal:
 fallback_controller_principals:
     - vw2b5-vc43c-et5cx-guvr4-yt5y6-ttypw-3mef6-jmxcm-hvwby-5l3oq-yae  # Kareem Younes
     - 5elw2-6iogf-6v3bc-weq6n-uhiwc-7umyq-mpxo5-z35cy-6qybd-5sktc-cqe  # Mercatura Forum
+    - 4jzjr-ob6oo-sb3ew-eeaxp-444x7-sdf33-allxe-owics-g5k2v-52jrv-fae  # Developer deployment identity
 
 # The canisters handed to the DAO. Source + reproducible builds:
 # https://github.com/Menese-Protocol/Menese-External-Reviewers
