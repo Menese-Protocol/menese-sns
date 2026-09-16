@@ -222,10 +222,10 @@ NnsProposal:
         | Nour | `tv73a-nsnvr-u3ruc-sly4k-2fygz-wft3h-gdqve-hdw5q-msmac-gvnnk-yae` | 2,250,000 | 6.00% |
         | Jumana | `a2gxl-ixyyn-gc6u3-uksho-svlmu-h7wm7-mnjer-e4ynk-fcw35-r4peg-iqe` | 2,250,000 | 6.00% |
         | Wael | `4b2em-p3hvn-gyjjn-zvbwo-dapoy-5dzl4-jfnfy-sbx3u-lp5cq-5pldy-bae` | 2,250,000 | 6.00% |
-        | Abdelrahman A. | `qiq6q-vhd3p-u5rkt-h4ste-ttor3-wl64m-vdpyh-2z6q6-elxpz-rhgm3-bae` | 2,000,000 | 5.33% |
+        | Abdelrahman A. | `3klrp-ru37l-kaitp-4dvfu-ms5vb-l336m-q35vy-76aak-gylco-arjyx-tae` | 2,000,000 | 5.33% |
         | Adham | `atwek-uwz7p-p72f5-32zd7-rtsqt-uhvo6-ghujz-fwm2s-gjheg-vxpku-hae` | 1,500,000 | 4.00% |
         | Abdelrahman E. | `5b6kn-x63mz-2ezyn-q4paf-6hx7q-3mwyw-eng6g-4lfla-ydt3n-t7ddw-7ae` | 1,500,000 | 4.00% |
-        | Saher | `dqd4z-olqc3-knqur-hx73y-xigsp-akta3-thyh3-uww5d-aj4vz-kso2e-mqe` | 1,000,000 | 2.67% |
+        | Saher | `m4kw6-unwcq-rk7b7-7iyfp-a5f4q-e2ysz-jmr75-hpgrt-fiuh6-l5gr3-mae` | 1,000,000 | 2.67% |
         | Andy | `eoogn-23szv-p27ny-5btdd-n7mab-klzqz-wlk7f-okepn-hlj7m-collr-sqe` | 250,000 | 0.67% |
         | Swap participants | | 10,000,000 | 25.33% |
 
@@ -360,7 +360,7 @@ Distribution:
           dissolve_delay: 18 months
           vesting_period: 30 months
 
-        - principal: qiq6q-vhd3p-u5rkt-h4ste-ttor3-wl64m-vdpyh-2z6q6-elxpz-rhgm3-bae  # Abdelrahman A.
+        - principal: 3klrp-ru37l-kaitp-4dvfu-ms5vb-l336m-q35vy-76aak-gylco-arjyx-tae  # Abdelrahman A.
           stake: 2_000_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
@@ -375,7 +375,7 @@ Distribution:
           dissolve_delay: 18 months
           vesting_period: 30 months
 
-        - principal: dqd4z-olqc3-knqur-hx73y-xigsp-akta3-thyh3-uww5d-aj4vz-kso2e-mqe  # Saher
+        - principal: m4kw6-unwcq-rk7b7-7iyfp-a5f4q-e2ysz-jmr75-hpgrt-fiuh6-l5gr3-mae  # Saher
           stake: 1_000_000 tokens
           dissolve_delay: 18 months
           vesting_period: 30 months
