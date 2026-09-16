@@ -26,11 +26,11 @@ description: >
     chain. This is the difference between a distributed key and a distributed brain.
 
 logo: logo.png
-url: https://meneseprotocol.io
+url: https://www.meneseprotocol.io
 
 NnsProposal:
     title: "Proposal to create an SNS DAO for Menese Protocol"
-    url: "https://forum.dfinity.org/t/menese-protocol-sns-decentralization"
+    url: "https://forum.dfinity.org/t/menese-protocol-sns-announcement/74501"
     summary: |
         Menese Protocol is asking the NNS to create an SNS DAO and hand it control of
         our four production canisters.
