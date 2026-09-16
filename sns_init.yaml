@@ -254,9 +254,12 @@ NnsProposal:
         ledger's block at the moment the NNS adopts this proposal, and is published
         with that block index and the script that re-derives it, so anyone can check
         it. The redemption canister is ecx5m-jaaaa-aaaak-qzfyq-cai. It exists today
-        with no code; its module is installed once the new ledger and governance
-        exist, with the published table as its only initialisation argument, and it
-        is controlled by SNS root.
+        with no code, because its module takes the new ledger and governance as
+        initialisation arguments and those do not exist until this proposal
+        executes. Once the swap has finalised the module is installed with the
+        published table, its module hash is published, and the canister is handed to
+        the DAO by a RegisterDappCanisters proposal, after which SNS root is its only
+        controller.
 
         Redemption stays open with no deadline. Nobody who backed us early gets timed
         out of their position. The existing ledger keeps running through this vote
